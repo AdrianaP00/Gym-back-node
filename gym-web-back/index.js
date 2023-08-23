@@ -31,3 +31,5 @@ app.use("/users", usersRouter)
 
 
 app.listen(PORT,() => console.log(`escuchando en el puerto http://localhost:${PORT}`))
+
+module.exports = app
