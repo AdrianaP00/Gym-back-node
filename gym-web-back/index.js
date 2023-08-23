@@ -1,6 +1,7 @@
 const express = require("express")
 const dotenv = require("dotenv").config()
 const cors = require("cors")
+const serverless = require("serverless-http")
 
 const classRouter = require("./src/api/routes/class.route")
 const coachsRouter = require("./src/api/routes/coachs.route")
@@ -28,6 +29,8 @@ app.use(cors({
 app.use("/class", classRouter)
 app.use("/coachs", coachsRouter)
 app.use("/users", usersRouter)
+app.use(`/.netlify/functions/api`, router)
 
 
 app.listen(PORT,() => console.log(`escuchando en el puerto http://localhost:${PORT}`))
+module.exports.handler = serverless(app)

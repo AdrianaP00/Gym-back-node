@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "./node_modules/.bin/netlify-lambda serve src",
     "dev": "nodemon index.js",
     "seedclass": "node ./src/seeds/course.seeds.js",
     "seedcoachs": "node ./src/seeds/coachs.seeds.js",
     "seedusers": "node ./src/seeds/users.seeds.js",
-    "jwt": "node ./src/utils/jwt.js"
-
+    "jwt": "node ./src/utils/jwt.js",
+    "build": "./node_modules/.bin/netlify-lambda build src"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,8 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.0",
-    "nodemon": "^3.0.1"
+    "netlify-lambda": "^2.0.16",
+    "nodemon": "^3.0.1",
+    "serverless-http": "^3.2.0"
   }
 }
