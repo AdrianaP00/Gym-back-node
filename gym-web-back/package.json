@@ -14,7 +14,7 @@
 
   },
   "keywords": [],
-  "author": "",
+  "author": "Adriana Piccolo",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",

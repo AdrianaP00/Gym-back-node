@@ -10,7 +10,7 @@ const options = {
     },
   },
   // Rutas donde se encuentran los endpoints
-  apis: ['./src/api/routes/*.js'], // Ajusta esto según tu estructura de carpetas
+  apis: ['./src/api/routes/*.js'],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
