@@ -1,7 +1,7 @@
 const express = require("express")
 const dotenv = require("dotenv").config()
 const cors = require("cors")
-
+const path=require("path")
 const classRouter = require("./src/api/routes/class.route")
 const coachsRouter = require("./src/api/routes/coachs.route")
 const usersRouter = require("./src/api/routes/users.route")
@@ -11,6 +11,26 @@ connect()
 
 const PORT = process.env.PORT;
 const app = express();
+
+const swaggerUI=require("swagger-ui-express");
+const swaggerJSDoc = require("swagger-jsdoc");
+
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Gym Api Documentation",
+      version: "1.0.0"
+    },
+    server: [
+      {
+        url:"http://localhost:" + PORT
+      }
+    ]
+  },
+  apis: [`${path.join(__dirname, "./src/api/routes/*.js")}`]
+}
+
 app.use(express.json())
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE');
@@ -24,11 +44,11 @@ app.use(cors({
     credentials: true
 }))
 
-
 app.use("/class", classRouter)
 app.use("/coachs", coachsRouter)
 app.use("/users", usersRouter)
 
+app.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerJSDoc(swaggerOptions)))
 
 app.listen(PORT,() => console.log(`escuchando en el puerto http://localhost:${PORT}`))
 

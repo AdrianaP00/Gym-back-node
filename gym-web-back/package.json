@@ -11,7 +11,6 @@
     "seedcoachs": "node ./src/seeds/coachs.seeds.js",
     "seedusers": "node ./src/seeds/users.seeds.js",
     "jwt": "node ./src/utils/jwt.js"
-
   },
   "keywords": [],
   "author": "Adriana Piccolo",
@@ -23,6 +22,8 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.0",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
   }
 }
