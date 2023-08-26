@@ -99,7 +99,34 @@ coachsRouter.get("/",[isAuth], getCoachs);
 coachsRouter.get("/:id",[isAuth], getOneCoach);
 /**
  * @swagger
- * /coachs:
+ * /coachs/class/{id}:
+ *   get:
+ *     summary: Obtain information about a specific coach by ID and class
+ *     tags: [Coachs]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Coach class
+ *     responses:
+ *       200:
+ *         description: Obtain information about a specific coach by ID and class
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               $ref: '#/components/schemas/Coachs'
+ *       500:
+ *         description: Internal server error
+ */
+coachsRouter.get("/class/:id",[isAuth], getCoachByClass);
+/**
+ * @swagger
+ * /coachs/:
  *   post:
  *     summary: Create a new Coach
  *     tags: [Coachs]
