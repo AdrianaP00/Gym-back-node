@@ -31,7 +31,7 @@ const options = {
     ],
   },
   // This is to call all the file
-  apis: ["${__dirname}/**/*.js"],
+  apis: ["./gym-web-back/src/**/*.js"],
 };
 
 app.use(express.json())
