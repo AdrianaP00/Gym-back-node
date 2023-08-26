@@ -12,7 +12,8 @@ connect()
 const PORT = process.env.PORT;
 const app = express();
 
-const swaggerUI=require("swagger-ui-express");
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
+const swaggerUI = require("swagger-ui-express");
 const swaggerJSDoc = require("swagger-jsdoc");
 
 const swaggerOptions = {
@@ -48,7 +49,11 @@ app.use("/class", classRouter)
 app.use("/coachs", coachsRouter)
 app.use("/users", usersRouter)
 
-app.use("/api-doc", express.static('node_modules/swagger-ui-dist/', {index: false}), swaggerUI.serve, swaggerUI.setup(swaggerJSDoc(swaggerOptions)))
+app.use(
+  "/api-doc",
+  swaggerUI.serve,
+  swaggerUI.setup(swaggerJSDoc(swaggerOptions), { customCssUrl: CSS_URL })
+)
 
 app.listen(PORT,() => console.log(`escuchando en el puerto http://localhost:${PORT}`))
 
