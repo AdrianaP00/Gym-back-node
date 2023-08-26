@@ -48,7 +48,7 @@ app.use("/class", classRouter)
 app.use("/coachs", coachsRouter)
 app.use("/users", usersRouter)
 
-app.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerJSDoc(swaggerOptions)))
+app.use("/api-doc", express.static('node_modules/swagger-ui-dist/', {index: false}), swaggerUI.serve, swaggerUI.setup(swaggerJSDoc(swaggerOptions)))
 
 app.listen(PORT,() => console.log(`escuchando en el puerto http://localhost:${PORT}`))
 
