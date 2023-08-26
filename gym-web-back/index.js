@@ -31,7 +31,7 @@ const options = {
     ],
   },
   // This is to call all the file
-  apis: ["src/**/*.js"],
+  apis: ["./src/**/*.js"],
 };
 
 app.use(express.json())
