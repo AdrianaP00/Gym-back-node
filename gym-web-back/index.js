@@ -14,23 +14,25 @@ const app = express();
 
 const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 const swaggerUI = require("swagger-ui-express");
-const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerJsDoc = require("swagger-jsdoc");
 
-const swaggerOptions = {
+const options = {
   definition: {
-    openapi: "3.0.1",
+    openapi: "3.0.0",
     info: {
       title: "Gym Api Documentation",
-      version: "1.0.0"
+      version: "1.0.0",
     },
-    server: [
+    servers: [
       {
-        url:"http://localhost:" + PORT
-      }
-    ]
+        url: "https://gym-back-node.vercel.app/",
+        description: "My API Documentation",
+      },
+    ],
   },
-  apis: [`${path.join(__dirname, "./src/api/routes/*.js")}`]
-}
+  // This is to call all the file
+  apis: ["src/**/*.js"],
+};
 
 app.use(express.json())
 app.use((req, res, next) => {
@@ -49,10 +51,12 @@ app.use("/class", classRouter)
 app.use("/coachs", coachsRouter)
 app.use("/users", usersRouter)
 
+const specs = swaggerJsDoc(options);
+
 app.use(
   "/api-doc",
   swaggerUI.serve,
-  swaggerUI.setup(swaggerJSDoc(swaggerOptions), { customCssUrl: CSS_URL })
+  swaggerUI.setup(specs, { customCssUrl: CSS_URL })
 )
 
 app.listen(PORT,() => console.log(`escuchando en el puerto http://localhost:${PORT}`))
