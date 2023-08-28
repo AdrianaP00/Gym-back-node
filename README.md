@@ -4,7 +4,7 @@ Structure of API with Express.js and documentation with Swagger.
 
 
 ## Estructura del Proyecto
-![Example](gym-back-node/img/8.png)
+![Example](img/8.png)
 
 
 
@@ -29,22 +29,22 @@ Structure of API with Express.js and documentation with Swagger.
 ## Imagenes
 
 ### Inicio
-![Example](gym-back-node/img/1.png)
+![Example](img/1.png)
 
 ### Schemas
-![Example](gym-back-node/img/2.png)
+![Example](img/2.png)
 
 ### LogIn and authorization
-![Example](gym-back-node/img/3.png)
+![Example](img/3.png)
 
 ### Choose a role end take the token
-![Example](gym-back-node/img/5.png)
+![Example](img/5.png)
 
 
 ### Put obtained token in Authorization 
-![Example](gym-back-node/img/6.png)
+![Example](img/6.png)
 
 
 ### Let's start using the api!
-![Example](gym-back-node/img/7.png)
+![Example](img/7.png)
 
