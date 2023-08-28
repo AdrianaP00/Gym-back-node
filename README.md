@@ -3,13 +3,13 @@
 Structure of API with Express.js and documentation with Swagger.
 
 
-## Estructura del Proyecto
+## Project structure
 ![Example](img/8.png)
 
 
 
 
-## Instalación
+## Installation
 
 - Clone this repository: 
 
@@ -26,9 +26,9 @@ Structure of API with Express.js and documentation with Swagger.
         https://gym-back-node.vercel.app/api-doc/
 
 
-## Imagenes
+## Images
 
-### Inicio
+### Start
 ![Example](img/1.png)
 
 ### Schemas
