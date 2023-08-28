@@ -4,16 +4,7 @@ Structure of API with Express.js and documentation with Swagger.
 
 
 ## Estructura del Proyecto
-gym-back-node
- |__src
-    |__api
-       |__controllers  #CRUD and definition of endpoints
-       |__models       #Schema of objects in api 
-       |__routes       #endpoints, authorizations and swagger
-       |__middleware   #definition of roles for authorization
-       |__seeds        #first data inserted into DB
-       |__utils        #db.js,jwt.js,validators.js
-  |__index.js          #configuration archive
+![Example](gym-back-node/img/8.png)
 
 
 
