@@ -16,7 +16,7 @@ const getUsers = async (req, res) => {
 const getOneUser = async (req, res) => {
     try {
         const { id } = req.params
-        const oneUser = await User.findById(id)
+        const oneUser = await Users.findById(id)
         return res.status(200).json(oneUser)
 
     } catch (error) {
@@ -27,7 +27,7 @@ const getOneUser = async (req, res) => {
 
 const postUser = async (req, res) => {
     try {
-        const newUser = new User(req.body)
+        const newUser = new Users(req.body)
         const createdUser = await newUser.save()
         return res.status(201).json(createdUser)
     } catch (error) {
@@ -38,9 +38,9 @@ const postUser = async (req, res) => {
 const putUser = async (req, res) => {
     try {
         const { id } = req.params
-        const putUser = new User(req.body)
+        const putUser = new Users(req.body)
         putCoachs._id = id;
-        const updateUser = await User.findByIdAndUpdate(id, putUser, { new: true })
+        const updateUser = await Users.findByIdAndUpdate(id, putUser, { new: true })
         if (!updateUser) {
             return res.status(404).json({ message: "no existe un coach con este id" })
         }
